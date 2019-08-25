@@ -1,0 +1,61 @@
+<div id="nrbox" >
+  <!--栏目标题 start -->
+
+  <!--栏目标题 end -->
+
+
+  <!-- Start: Content -->
+  <div class="container-fluid content" style="width: auto; height: auto; ">
+    <div class="row" >
+      <!--此处为需要添加的内容-->
+      <!-- index_Main Page -->
+      <div class="invoice" >
+        <!--<div class="panel bk-bg-white">-->
+        <div class = "panel">
+          <div class="panel-body">
+
+            <form class="form-horizontal group-border" role="form">
+              <table class="table table-border table-bordered table-bg" style="align:center">
+                <thead style="align:center">
+                <tr class="text-c">
+
+                  <!--<th width="100">订单ID</th>-->
+                  <th width="140">用户身份证号</th>
+                  <th width="160">入住酒店</th>
+                  <th width="160">房间类型</th>
+                  <th width="100">总金额</th>
+                  <th width="100">预计入住时间</th>
+                  <th width="100">预计离店时间</th>
+                  <th width="100">联系方式</th>
+                  <th width="100">订单状态</th>
+                  <!--<th width="100"></th>-->
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let order of orders" >
+                  <!--后台循环查找往页面添加数据-->
+                  <!--<td>{{orderlist.id}}</td>-->
+                  <td>{{user_id}}</td>
+                  <td>{{order.hotel_id}}</td>
+                  <td>{{order.room_type}}</td>
+                  <td>{{order.price}}</td>
+                  <td>{{order.start_time}}</td>
+                  <td>{{order.end_time}}</td>
+                  <td>{{order.user_tel}}</td>
+                  <td>已下单</td>
+                  <!--<td>
+                      <input type="submit" (click)="deleteHero(orderlist.id)" value="取消订单" >
+                  </td>-->
+                </tr>
+                </tbody>
+              </table>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/container-->
+  <div class="clear"></div>
+</div>

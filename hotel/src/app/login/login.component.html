@@ -1,0 +1,99 @@
+<div id="nrbox">
+<section class="content_box cleafix">
+  <div class="left_area fl" style="height:500px;vertical-align: middle;vertical-align: middle;">
+    <!--  -->
+    <!--<form #formRef="ngForm" (ngSubmit)="onSubmit(formRef.value)">
+      <div ngModelGroup="login">
+      <div class="form_body" data-view="loginView">
+        <div class="input_item clearfix" data-propertyname="username" data-controltype="Phone" style="display: block;">
+          <input type="text" class="input input_white" name="username" placeholder="请输入18位身份证号码"[(ngModel)]="username" #usernameRef="ngModel" required minlength="18" autocomplete="off">
+          <label *ngIf="usernameRef.errors?.required">this is required</label>
+          <label *ngIf="usernameRef.errors?.minlength">should be 18 numbers</label>
+          <label *ngIf="auth?.hasError">{{auth.errMsg}}</label>
+        </div>
+        <div class="input_item clearfix" data-propertyname="password" data-controltype="Password" style="display: block;">
+          <input type="password" class="input input_white"  name="password" placeholder="请输入密码" autocomplete="off" [(ngModel)]="password" #passwordRef="ngModel" required>
+          <label *ngIf="passwordRef.errors?.required">this is required</label>
+        </div>
+
+        <div class="input_item clearfix">
+          <table width="100%">
+            <tr>
+              <td width="50%">
+                <p style="color: #FF0000">{{result}}</p>
+              </td>
+              <td width="50%">
+                
+                <a href="#" class="forgot_pwd">忘记密码？</a>
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="input_item clearfix" data-propertyname="submit" data-controltype="Botton" style="display: block;">
+          <input type="submit" class="btn btn_green btn_active btn_block btn_lg" value="登 录">
+        </div>
+        <div class="input_item clearfix">
+          
+          <h5 class="reg_now">还没有启元帐号？<a  routerLink="/login" routerLinkActive="active" id="Login">立即注册</a></h5>
+        </div>
+        <input type="hidden" value="" id="isVisiable_request_form_verifyCode">
+      </div>
+        </div>
+    </form>-->
+    <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="_submitForm(validateForm.value)">
+        <div nz-form-item>
+            <div nz-form-control nzHasFeedback>
+              <nz-input formControlName="userName" [nzPlaceHolder]="'IDCard'" [nzSize]="'large'">
+                <ng-template #prefix>
+                  <i class="anticon anticon-user"></i>
+                </ng-template>
+              </nz-input>
+              <div nz-form-explain *ngIf="validateForm.controls.userName.dirty&&validateForm.controls.userName.hasError('required')">Please input your username!</div>
+            </div>
+          </div>
+          <div nz-form-item>
+              <div nz-form-control>
+                <nz-input formControlName="password" [nzType]="'password'" [nzPlaceHolder]="'Password'" [nzSize]="'large'">
+                  <ng-template #prefix>
+                    <i class="anticon anticon-lock"></i>
+                  </ng-template>
+                </nz-input>
+                <div nz-form-explain *ngIf="validateForm.controls.password.dirty&&validateForm.controls.password.hasError('required')">Please input your Password!</div>
+              </div>
+            </div>
+            
+            <div nz-form-item>
+              <div nz-form-control>
+                <label nz-checkbox formControlName="remember">
+                  <span>Remember me</span>
+                </label>
+                <a class="login-form-forgot" class="login-form-forgot">Forgot password</a>
+                <button nz-button class="login-form-button" [nzType]="'primary'" [nzSize]="'large'">Log in</button>
+                Or
+                <a routerLink="/login" routerLinkActive="active" id="Login">register now!</a>
+              </div>
+            </div>
+    </form>
+  </div>
+
+  <div class="divider fl">
+    <img src="../../assets/img/divider-login_3362138.jpg" alt="分割线">
+  </div>
+  <div class="right_area fl"style="margin-top:100px">
+    <h5>使用以下帐号直接登录:</h5>
+    <ul class="vender_login clearfix">
+      <!--<li><a href="http://passport.lagou.com/oauth20/auth_sinaWeiboProvider.html" title="使用新浪微博帐号登录" class="vender_icon icon_sina" target="_blank"></a></li>
+                <li><a href="http://passport.lagou.com/oauth20/auth_qqProvider.html" title="使用腾讯QQ帐号登录" class="vender_icon icon_tencent" target="_blank"></a></li>
+                <li class="last_child"><a href="http://passport.lagou.com/oauth20/auth_weixinProvider.html" class="vender_icon icon_wechat" title="使用微信帐号登录" target="_blank"></a></li>
+                -->
+      <li><a href="#" title="使用新浪微博帐号登录" class="vender_icon icon_sina" target="_blank"></a></li>
+      <li><a href="#" title="使用腾讯QQ帐号登录" class="vender_icon icon_tencent" target="_blank"></a></li>
+      <li class="last_child"><a href="#" class="vender_icon icon_wechat" title="使用微信帐号登录" target="_blank"></a></li>
+    </ul>
+    <div class="qrcode">
+      <img src="../../assets/img/qrcode_0ec6bff.jpg" alt="二维码">
+      <p>[ 扫码关注启元酒店 ]</p>
+    </div>
+  </div>
+</section>
+</div>

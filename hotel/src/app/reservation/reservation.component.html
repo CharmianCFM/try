@@ -1,0 +1,154 @@
+<div id="nrbox" >
+    <!--栏目标题 start -->
+    <div id="lmcap" class="cmain">
+        <div>Hotel Reservation</div>
+    </div>
+    <!--栏目标题 end -->
+
+    <!--
+            作者：jisuanjixp@sina.com
+            时间：2016-06-28
+            描述：订单提交表
+          -->
+          <!-- Start: Content -->
+    <div class="container-fluid content" style="width: 800px; height: auto; ">
+      <div class="row" >
+
+      <!--此处为需要添加的内容-->
+      <!-- index_Main Page -->
+          <div class="invoice" >
+            <!--<div class="panel bk-bg-white">-->
+            <div class = "panel">
+              <div class="panel-body">
+                <div [hidden]="pic" style="margin:0px auto" >
+                    <img src="../../assets/img/room/8.jpg" alt="...">
+                </div>
+                  <div [hidden]="submitted">
+
+                  <div class="form-horizontal group-border" role="form">
+                  <div class="form-group" align="center" style="padding-left:200px">
+                    <label class="pull-left control-label ">用户姓名</label>
+                    <div class="col-lg-5 col-md-3">
+                    <input type="text" class="form-control"[(ngModel)]="order.user_name"placeholder="username">
+                    </div>
+                  </div>
+                  <hr  />
+                  <div class="form-group" align="center"style="padding-left:200px">
+                    <label class="pull-left control-label ">联系方式</label>
+                    <div class="col-lg-5 col-md-3">
+                    <input type="text" class="form-control"[(ngModel)]="order.user_tel"placeholder="usertel">
+                    </div>
+                  </div>
+                          <hr />
+                  <div class="form-group"style="padding-left:200px">
+                    <label class="pull-left control-label">选择酒店</label>
+                    <div class="col-lg-10 col-md-10">
+                      <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                          <select class="form-control select2"[(ngModel)]="order.hotel_id" placeholder="hotel_id">
+                            <optgroup label="中国">
+                              <option value="BeijingStartHotel">启元北京国际大酒店</option>
+                              <option value="ShanghaiStartHotel">启元上海国际大酒店</option>
+                            </optgroup>
+                            <optgroup label="日本">
+                              <option value="TokyoStartHotel">启元东京国际大酒店</option>
+                              <option value="OsakaStartHotel">启元大阪国际大酒店</option>
+                              <option value="KyotoStartHotel">启元京都国际大酒店</option>
+                            </optgroup>
+
+                            <optgroup label="美国">
+                              <option value="LAStartHotel">启元洛杉矶国际大酒店</option>
+                              <option value="ChigagoStartHotel">启元芝加哥国际大酒店</option>
+
+                            </optgroup>
+                          </select>
+                          <span class="help-block">根据地区选择酒店</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <hr />
+                  <div class="form-group"style="padding-left:200px">
+                    <label class="pull-left control-label">选择房型</label>
+                    <div class="col-lg-10 col-md-10">
+                      <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                          <select class="form-control select2"[(ngModel)]="order.room_type" placeholder="room_type">
+                            <optgroup label="行政标准间">
+                              <option value="StandardRoom">普通行政间</option>
+                              <option value="LuxuryRoom">商务间</option>
+                              <option value="Suite">套房</option>
+                            </optgroup>
+                          </select>
+                          <span class="help-block">根据需求选择房型</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <hr />
+
+                  <div class="form-group"style="padding-left:200px">
+                    <label class="pull-left control-label">选择时间</label>
+                      <div class="col-md-6">
+                        <div class="input-daterange input-group" data-plugin-datepicker>
+                          <span class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                          </span>
+                         <input type="date" class="form-control" name="start" [(ngModel)]="order.start_time" placeholder="start_time"/>
+
+                          <span class="input-group-addon">to</span>
+                          <input type="date" class="form-control" name="end" [(ngModel)]="order.end_time" placeholder="end_time" />
+                        </div>
+                      </div>
+                  </div>
+
+                  <hr />
+                  <!--<div class="row">
+                    <div class="col-lg-4 col-lg-offset-4 col-sm-5 col-sm-offset-2 recap pull-right">
+                      <table class="table table-clear">
+                        <tbody>
+                          <tr>
+                            <td class="left"><strong>共消费</strong></td>
+                            <td class="right">$412,25</td>
+                          </tr>
+                          <tr>
+                            <td class="left"><strong>折扣 (25%)</strong></td>
+                            <td class="right">$103,06</td>
+                          </tr>
+                          <tr>
+                            <td class="left"><strong>实际共消费</strong></td>
+                            <td class="right"><strong>$340,11</strong></td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                    </div>
+                  </div>-->
+                  <hr/>
+                  <!--<div class="pull-right">
+                    <button type="button" class="btn btn-primary">
+                      <i class="fa fa-lightbulb-o"></i> 提交
+                    </button>
+                  </div>-->
+
+                  <div class="messageboardsc-submit-btn" align="center">
+                    <button nz-button [nzType]="'default'"  (click)="onSubmit()" type="submit" style="width:150px">提交</button>
+                  </div>
+
+
+            </div>
+
+
+              </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+    </div>
+    <!--/container-->
+    <div class="clear"></div>
+  </div>

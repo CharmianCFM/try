@@ -1,0 +1,56 @@
+<p>
+  navbar works!
+</p>
+<div id="top">
+  <div id="topbox" class="cmain">
+    <div class="logo">
+      <a href="#">
+        <img src="<%=basePath%>../../assets/img/logo220x50.png" width="220" height="50" alt="">
+      </a>
+    </div>
+    <div class="eng" id="logineng">
+		            <span>
+		            	<a  routerLink="/login" routerLinkActive="active" id="Login">登录</a>
+		            </span>
+      <p style="display: none;">
+        <a routerLink="/register" routerLinkActive="active" id="Register">注册</a>
+      </p>
+    </div>
+    <div id="Welcome">
+        <nz-avatar nzIcon="user" style="background-color:#37129c;"></nz-avatar>
+      <p >
+          <nz-tag [nzColor]="'grey'" >欢迎您，{{username}}</nz-tag>
+      </p>
+      
+    </div>
+  
+    <button nz-button [nzType]="'default'" nzGhost (click)="logout()" id="Logout" [nzLoading]="isLoadingTwo" style="margin-top:6px">
+        <i class="anticon anticon-poweroff"></i>
+        <span>Logout</span>
+    </button>
+  </div>
+</div>
+
+<div id="lanmu" class="cmain">
+  <ul>
+    <li><a routerLink="/home" routerLinkActive="active" id="Home">首页</a></li>
+    <li><nz-dropdown> <a  routerLink="/room" routerLinkActive="active" id="Room" nz-dropdown>房型<i class="anticon anticon-down"></i></a><ul nz-menu>
+      <li nz-menu-item>
+        <a target="_blank" rel="noopener noreferrer" routerLink="/standard" routerLinkActive="active" id="standard">行政房</a>
+      </li>
+      <li nz-menu-item>
+        <a target="_blank" rel="noopener noreferrer" routerLink="/spuerior" routerLinkActive="active" id="superior">商务房</a>
+      </li>
+      <li nz-menu-item>
+        <a target="_blank" rel="noopener noreferrer" routerLink="/deluxe" routerLinkActive="active" id="deluxe">套房</a>
+      </li>
+    </ul></nz-dropdown></li>
+    <li> <a routerLink="/reservation" routerLinkActive="active" id="Reservation">预订</a></li>
+    <li><a routerLink="/aboutus" routerLinkActive="active" id="AboutUs">关于我们</a></li>
+    <li><a routerLink="/message" routerLinkActive="active" id="Message">留言板</a></li>
+    <li><a routerLink="/person" routerLinkActive="active" id="Person">个人中心</a></li>
+  </ul>
+</div>
+<div>
+  <router-outlet></router-outlet>
+</div>

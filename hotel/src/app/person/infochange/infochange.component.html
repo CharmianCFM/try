@@ -1,0 +1,62 @@
+
+<div id="nrbox" >
+
+  <div class="container-fluid content" style="width: 800px; height: auto; ">
+    <div class="row" style="margin-bottom: -50px">
+
+      <!--此处为需要添加的内容-->
+      <!-- index_Main Page -->
+      <div class="invoice" style="margin-bottom:70px">
+        <!--<div class="panel bk-bg-white">-->
+        <div class = "panel" >
+          <div class="panel-body">
+            <form class="form-horizontal group-border" role="form" >
+              <div class="form-group" align="center">
+                <label class="pull-left control-label "style="padding-left:190px">身份证号</label>
+                <div class="col-lg-5 col-md-3">
+                  <input type="text" class="form-control" name="userIDNum" id="userIDNum" readonly="readonly" [(ngModel)]="client.userIDNum" >
+                </div>
+              </div>
+              <div class="form-group" align="center">
+                <label class="pull-left control-label "style="padding-left:190px">用户账号</label>
+                <div class="col-lg-5 col-md-3">
+                  <input type="text" class="form-control"readonly="readonly" name="userName" id="userName" [(ngModel)]="client.userName"  >
+                </div>
+              </div>
+              <div class="form-group" align="center">
+                <label class="pull-left control-label "style="padding-left:190px">联系电话</label>
+                <div class="col-lg-5 col-md-3">
+                  <input type="text" class="form-control" name="userTel" id="userTel" [(ngModel)]="client.userTel" >
+                </div>
+              </div>
+              <div class="form-group" align="center">
+                <label class="pull-left control-label "style="padding-left:190px">常用邮箱</label>
+                <div class="col-lg-5 col-md-3">
+                  <input type="text" class="form-control" name="userMail" id="userMail" [(ngModel)]="client.userMail">
+                </div>
+              </div>
+              <div class="form-group" align="center">
+                <label class="pull-left control-label "style="padding-left:190px">登录密码</label>
+                <div class="col-lg-5 col-md-3">
+                  <input type="password" class="form-control" name="userPwd" id="userPwd" [(ngModel)]="client.userPwd" >
+                </div>
+              </div>
+              <div class="form-group" align="center">
+                <label class="pull-left control-label "style="padding-left:190px">确认密码</label>
+                <div class="col-lg-5 col-md-3">
+                  <input type="password" class="form-control"  >
+                </div>
+              </div>
+              <p style="color: #FF0000; font-size: 16px;" id="personalcenterinfo"></p>
+              <div class="messageboardsc-submit-btn" align="center">
+                <input type="submit" value="确认修改" (click)="update()">
+                <br/>
+                {{tishi}}
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

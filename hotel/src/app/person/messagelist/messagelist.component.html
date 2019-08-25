@@ -1,0 +1,51 @@
+<div id="nrbox" >
+  <!--栏目标题 start -->
+
+  <!--栏目标题 end -->
+
+
+  <!-- Start: Content -->
+  <div class="container-fluid content" style="width: auto; height: auto; ">
+    <div class="row" >
+      <!--此处为需要添加的内容-->
+      <!-- index_Main Page -->
+      <div class="invoice" >
+        <!--<div class="panel bk-bg-white">-->
+        <div class = "panel">
+          <div class="panel-body">
+            <form class="form-horizontal group-border" role="form">
+              <table class="table table-border table-bordered table-bg" style="align:center">
+                <thead style="align:center">
+                <tr class="text-c">
+                  <th width="120">留言编号</th>
+                  <th width="120">用户名</th>
+                  <th width="120">邮箱</th>
+                  <th width="120">电话</th>
+                  <th width="200">留言</th>
+                  <th width="20"></th>
+                  <!--<th width="200">星级</th>-->
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let message of messagelists">
+                  <!--后台循环查找往页面添加数据-->
+                  <td>{{message.clientLeaveMassageID}}</td>
+                  <td>{{message.userName}}</td>
+                  <td>{{message.userMail}}</td>
+                  <td>{{message.userTel}}</td>
+                  <td>{{message.text}}</td>
+                  <!--<td>{{message.level}}星</td>-->
+                  <td><button
+                    (click)="delete(message)">删除</button></td>
+                </tr>
+                </tbody>
+              </table>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--/container-->
+  <div class="clear"></div>
+</div>

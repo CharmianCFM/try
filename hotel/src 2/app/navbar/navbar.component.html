@@ -1,0 +1,33 @@
+<p>
+  navbar works!
+</p>
+<div id="top">
+  <div id="topbox" class="cmain">
+    <div class="logo">
+      <a href="#">
+        <img src="<%=basePath%>../../assets/img/logo220x50.png" width="220" height="50" alt="">
+      </a>
+    </div>
+    <div class="eng">
+		            <span>
+		            	<a  routerLink="/login" routerLinkActive="active" id="Login">登录</a>
+		            </span>
+      <p style="display: none;">
+        <a routerLink="/register" routerLinkActive="active" id="Register">注册</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+<div id="lanmu" class="cmain">
+  <ul>
+    <li><a routerLink="/home" routerLinkActive="active" id="Home">首页</a></li>
+    <li> <a routerLink="/room" routerLinkActive="active" id="Room">房型</a></li>
+    <li> <a routerLink="/reservation" routerLinkActive="active" id="Reservation">预订</a></li>
+    <li><a routerLink="/aboutus" routerLinkActive="active" id="AboutUs">关于我们</a></li>
+    <li><a routerLink="/message" routerLinkActive="active" id="Message">留言板</a></li>
+  </ul>
+</div>
+<div>
+  <router-outlet></router-outlet>
+</div>
